@@ -1,0 +1,19 @@
+# Core runtime
+python-dotenv
+langchain
+langchain_community
+langchain-openai
+langchain-text-splitters
+langgraph
+streamlit
+faiss-cpu
+pypdf
+tiktoken
+# Retrieval / evaluation
+rank-bm25
+numpy
+
+# Monitoring
+langsmith
+langfuse
+ipykernel
