@@ -1,10 +1,12 @@
+from pathlib import Path
+
 import streamlit as st
-from openai import OpenAI
 from dotenv import load_dotenv
+from openai import OpenAI
 import os
 
-# .env 파일에서 OPENAI_API_KEY 등 환경 변수 로드
-load_dotenv()
+ROOT = Path(__file__).resolve().parent.parent
+load_dotenv(ROOT / ".env")
 
 # (0) 사이드바: API 키를 .env에서 읽어옴
 with st.sidebar:

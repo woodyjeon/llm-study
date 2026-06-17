@@ -33,7 +33,7 @@ def pdf_to_text(pdf_file_path: Path):
 
         full_text += text + "\n------------------------------------\n"
 
-    txt_file_path = DATA_DIR / f"{pdf_file_path.stem}_with_preprocessing.txt"
+    txt_file_path = OUTPUT_DIR / f"{pdf_file_path.stem}_with_preprocessing.txt"
 
     with open(txt_file_path, "w", encoding="utf-8") as f:
         f.write(full_text)
@@ -69,6 +69,7 @@ def summarize_txt(file_path: Path):
 
     response = client.chat.completions.create(
         model="gpt-5-nano",
+        temperature=0.1,
         messages=[
             {"role": "system", "content": system_prompt},
         ],

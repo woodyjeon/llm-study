@@ -1,9 +1,11 @@
-from openai import OpenAI
+from pathlib import Path
+
 from dotenv import load_dotenv
+from openai import OpenAI
 import os
 
-# 1
-load_dotenv()  # .env 파일에서 환경변수를 불러옴
+ROOT = Path(__file__).resolve().parent.parent
+load_dotenv(ROOT / ".env")
 api_key = os.getenv("OPENAI_API_KEY")  # 환경변수에서 API Key를 읽어옴
 client = OpenAI(api_key=api_key)  # OpenAI 클라이언트 생성
 

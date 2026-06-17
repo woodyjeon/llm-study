@@ -1,9 +1,12 @@
+from pathlib import Path
+
 import streamlit as st
-from openai import OpenAI
 from dotenv import load_dotenv
+from openai import OpenAI
 import os
 
-load_dotenv()
+ROOT = Path(__file__).resolve().parent.parent
+load_dotenv(ROOT / ".env")
 
 SYSTEM_PROMPT = """너는 영화 추천 전문가야.
 사용자가 좋아하는 장르를 알려주면, 그 장르에 맞는 영화 3편을 추천해줘.
