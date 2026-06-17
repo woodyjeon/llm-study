@@ -11,6 +11,11 @@
 venv/
 env/
 
+# 생성 결과물
+output/*
+!output/.gitkeep
+data/*.txt
+
 # Python 캐시
 __pycache__/
 *.py[cod]
